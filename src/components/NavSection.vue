@@ -3,27 +3,24 @@
     <sidebar-section v-if="showSidebar" />
     <nav>
       <div class="logo">
-        <img src="@/assets/images/Icons/Group 2.svg" alt="" id="logo" />
+        <img src="@/assets/images/Icons/logo.svg" alt="" id="logo" />
       </div>
       <div class="nav-options">
         <div class="nav-icon">
-          <img src="@/assets/images/Icons/Rectangle.svg" alt="" id="nav-icon" />
+          <img src="@/assets/images/Icons/nav-icon.svg" alt="" id="nav-icon" />
         </div>
         <ul>
-          <li> <router-link to ="/"><span>00</span>HOME</router-link></li>
-          <li><span>01</span>DESTINATION</li>
-          <li><span>02</span>CREW</li>
-          <li><span>03</span>TECHNOLOGY</li>
+          <li v-for="(nav,index) in navs" :key="index"> <router-link :to="nav.path" class="router-link"><span>{{nav.figure}}</span>{{nav.name}}</router-link></li>
         </ul>
       </div>
       <div class="nav-icons" @click="toggleIcon">
         <img
-          src="@/assets/images/Icons/Group (2).svg"
+          src="@/assets/images/Icons/hamburger-icon.svg"
           alt=""
           id="hamburger-icon"
-          v-if="showIcon"
+          v-if="!showSidebar"
         />
-        <img src="@/assets/images/Icons/Group (1).svg" alt="" id="close-icon" v-else />
+        <img src="@/assets/images/Icons/close-icon.svg" alt="" id="close-icon" v-else />
       </div>
     </nav>
   </div>
@@ -38,11 +35,11 @@ export default {
     return {
       showIcon: true,
       showSidebar: false,
+      navs: [ { name: 'HOME', path: '/', figure: '00'}, { name: 'DESTINATION', path: '/destination', figure: '01'}, {name:'CREW', path:'/crew', figure:'02'}, {name:'TECHNOLOGY', path:'/technology', figure:'03'} ] 
     };
   },
   methods: {
     toggleIcon() {
-      this.showIcon = !this.showIcon;
       this.showSidebar = !this.showSidebar;
     },
   },
@@ -158,10 +155,12 @@ ul li span {
   right: 1.6rem;
   top: 2.6rem;
 }
-.router-link-exact-active{
-  border-bottom: 2px solid #fff;
+.router-link{
   text-decoration: none;
   color:#fff;
+}
+.router-link-exact-active{
+  border-bottom: 2px solid #fff;
   padding-bottom: 38px;
 }
 </style>
