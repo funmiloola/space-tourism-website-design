@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <home-nav-section />
+    <nav-section />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeNavSection from "@/components/Home-Nav-section.vue";
+import NavSection from "@/components/NavSection.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HomeNavSection,
+    NavSection,
   },
 };
 </script>
@@ -20,19 +20,21 @@ export default {
  margin:0;
 }
 .home{
-    background-image: url(@/assets/background-home-desktop.jpg);
+    background-image: url(@/assets/images/image/background-home-desktop.jpg);
   height: 100vh;
   width: 100%;
   margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   .home {
-    background-image: url(@/assets/background-home-tablet.jpg);
+    background-image: url(@/assets/images/image/background-home-tablet.jpg);
   }
 }
 @media (max-width: 599px) {
   .home {
-    background-image: url(@/assets/background-home-mobile.jpg);
+    background-image: url(@/assets/images/image/background-home-mobile.jpg);
   }
 }
 

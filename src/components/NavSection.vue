@@ -3,14 +3,14 @@
     <sidebar-section v-if="showSidebar" />
     <nav>
       <div class="logo">
-        <img src="@/assets/Group 2.svg" alt="" id="logo" />
+        <img src="@/assets/images/Icons/Group 2.svg" alt="" id="logo" />
       </div>
       <div class="nav-options">
         <div class="nav-icon">
-          <img src="@/assets/Rectangle.svg" alt="" id="nav-icon" />
+          <img src="@/assets/images/Icons/Rectangle.svg" alt="" id="nav-icon" />
         </div>
         <ul>
-          <li><span>00</span>HOME</li>
+          <li> <router-link to ="/"><span>00</span>HOME</router-link></li>
           <li><span>01</span>DESTINATION</li>
           <li><span>02</span>CREW</li>
           <li><span>03</span>TECHNOLOGY</li>
@@ -18,12 +18,12 @@
       </div>
       <div class="nav-icons" @click="toggleIcon">
         <img
-          src="@/assets/Group (2).svg"
+          src="@/assets/images/Icons/Group (2).svg"
           alt=""
           id="hamburger-icon"
           v-if="showIcon"
         />
-        <img src="@/assets/Group (1).svg" alt="" id="close-icon" v-else />
+        <img src="@/assets/images/Icons/Group (1).svg" alt="" id="close-icon" v-else />
       </div>
     </nav>
   </div>
@@ -106,6 +106,7 @@ ul li {
   font-weight: 400;
   padding-top: 39px;
   padding-bottom: 38px;
+  cursor:pointer;
 }
 ul li span {
   color: #fff;
@@ -156,5 +157,11 @@ ul li span {
   z-index: 100;
   right: 1.6rem;
   top: 2.6rem;
+}
+.router-link-exact-active{
+  border-bottom: 2px solid #fff;
+  text-decoration: none;
+  color:#fff;
+  padding-bottom: 38px;
 }
 </style>
