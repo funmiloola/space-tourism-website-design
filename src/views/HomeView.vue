@@ -1,27 +1,29 @@
 <template>
   <div class="home">
     <nav-section />
+    <hero-section />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import NavSection from "@/components/NavSection.vue";
-
+import HeroSection from "@/components/HeroSectionHome.vue";
 export default {
   name: "HomeView",
   components: {
     NavSection,
+    HeroSection,
   },
 };
 </script>
 <style scoped>
-*{
- margin:0;
+* {
+  margin: 0;
 }
-.home{
-    background-image: url(@/assets/images/image/background-home-desktop.jpg);
-  height: 100vh;
+.home {
+  background-image: url(@/assets/images/image/background-home-desktop.jpg);
+  min-height: 100vh;
   width: 100%;
   margin: 0;
   background-repeat: no-repeat;
@@ -37,5 +39,4 @@ export default {
     background-image: url(@/assets/images/image/background-home-mobile.jpg);
   }
 }
-
 </style>
