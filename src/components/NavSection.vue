@@ -61,8 +61,6 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Barlow:wght@400;500;700&display=swap");
 * {
   margin: 0;
 }
