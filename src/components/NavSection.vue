@@ -10,7 +10,12 @@
           <img src="@/assets/images/Icons/nav-icon.svg" alt="" id="nav-icon" />
         </div>
         <ul>
-          <li v-for="(nav,index) in navs" :key="index"> <router-link :to="nav.path" class="router-link"><span>{{nav.figure}}</span>{{nav.name}}</router-link></li>
+          <li v-for="(nav, index) in navs" :key="index">
+            <router-link :to="nav.path" class="router-link"
+              ><span>{{ nav.figure }}</span
+              >{{ nav.name }}</router-link
+            >
+          </li>
         </ul>
       </div>
       <div class="nav-icons" @click="toggleIcon">
@@ -20,7 +25,12 @@
           id="hamburger-icon"
           v-if="!showSidebar"
         />
-        <img src="@/assets/images/Icons/close-icon.svg" alt="" id="close-icon" v-else />
+        <img
+          src="@/assets/images/Icons/close-icon.svg"
+          alt=""
+          id="close-icon"
+          v-else
+        />
       </div>
     </nav>
   </div>
@@ -35,7 +45,12 @@ export default {
     return {
       showIcon: true,
       showSidebar: false,
-      navs: [ { name: 'HOME', path: '/', figure: '00'}, { name: 'DESTINATION', path: '/destination', figure: '01'}, {name:'CREW', path:'/crew', figure:'02'}, {name:'TECHNOLOGY', path:'/technology', figure:'03'} ] 
+      navs: [
+        { name: "HOME", path: "/", figure: "00" },
+        { name: "DESTINATION", path: "/destination", figure: "01" },
+        { name: "CREW", path: "/crew", figure: "02" },
+        { name: "TECHNOLOGY", path: "/technology", figure: "03" },
+      ],
     };
   },
   methods: {
@@ -103,7 +118,7 @@ ul li {
   font-weight: 400;
   padding-top: 39px;
   padding-bottom: 38px;
-  cursor:pointer;
+  cursor: pointer;
 }
 ul li span {
   color: #fff;
@@ -155,11 +170,11 @@ ul li span {
   right: 1.6rem;
   top: 2.6rem;
 }
-.router-link{
+.router-link {
   text-decoration: none;
-  color:#fff;
+  color: #fff;
 }
-.router-link-exact-active{
+.router-link-exact-active {
   border-bottom: 2px solid #fff;
   padding-bottom: 38px;
 }
