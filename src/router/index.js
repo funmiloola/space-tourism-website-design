@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DestinationSection from "../views/DestinationSection.vue";
+import CrewSection from "../views/CrewSection.vue"
 Vue.use(VueRouter);
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: "/destination",
     name: "destination",
     component:DestinationSection,
+  },
+  {
+    path: "/crew",
+    name: "crew",
+    component:CrewSection
   }
 ];
 

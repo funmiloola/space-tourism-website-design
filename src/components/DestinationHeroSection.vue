@@ -123,8 +123,8 @@ export default {
   .hero-section {
     flex-direction: column;
     justify-content: center;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 36px;
+    padding-right: 36px;
     padding-top: 48px;
     gap: 36px;
   }
@@ -178,6 +178,12 @@ ul li {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 2.7px;
+  cursor: pointer;
+}
+ul li:hover{
+  border-bottom: 2px solid #fff;
+  padding-bottom:12px;
+  opacity:0.5;
 }
 h2 {
   color: #fff;
@@ -195,6 +201,7 @@ h2 {
 }
 @media (max-width: 599px) {
   h2 {
+    text-align: center;
     font-size: 56px;
   }
 }
@@ -213,8 +220,6 @@ h2 {
 @media (max-width: 599px) {
   .options {
     align-items: center;
-    padding-left: 62px;
-    padding-right: 62px;
   }
 }
 .option-detail {
