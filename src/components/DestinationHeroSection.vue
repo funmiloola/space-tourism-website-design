@@ -3,28 +3,35 @@
     <h1><span>01</span>Pick your destination</h1>
     <div class="hero-section">
       <div>
-        <img :src="selectedPlanetImage" alt="" />
+        <img :src="defaultImage" alt="" />
       </div>
       <div class="options">
         <ul>
-          <li v-for="(option, index) in options" :key="index" @click="selectPlanet(option)" :class="{'selected': option===selectedOption}">{{ option }}</li>
-        </ul> 
+          <li
+            v-for="planet in planets"
+            :key="planet.name"
+            @click="selectPlanet(planet)"
+            :class="{ selected: planet.name === selectedOption }"
+          >
+            {{ planet.name }}
+          </li>
+        </ul>
         <div v-for="planet in planets" :key="planet.name">
           <div v-if="selectedPlanet === planet.name">
-        <h2>{{planet.name}}</h2>
-        <p class="option-detail">
-         {{planet.description}}
-        </p>
-        <div class="measurements">
-          <div>
-            <h3>AVG. DISTANCE</h3>
-            <p>{{planet.distance}}</p>
-          </div>
-          <div>
-            <h3>Est. travel time</h3>
-            <p>{{planet.days}}</p>
-          </div>
-          </div>
+            <h2>{{ planet.name }}</h2>
+            <p class="option-detail">
+              {{ planet.description }}
+            </p>
+            <div class="measurements">
+              <div>
+                <h3>AVG. DISTANCE</h3>
+                <p>{{ planet.distance }}</p>
+              </div>
+              <div>
+                <h3>Est. travel time</h3>
+                <p>{{ planet.days }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -35,7 +42,6 @@
 export default {
   data() {
     return {
-      options: ["MOON", "MARS", "EUROPA", "TITAN"],
       planets: [
         {
           name: "MOON",
@@ -43,49 +49,45 @@ export default {
             "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11landing sites.",
           distance: "384,400 KM",
           days: "3 DAYS",
-          img:require("@/assets/images/image/image-moon.webp")
+          img: require("@/assets/images/image/image-moon.webp"),
         },
         {
-          name:"MARS",
+          name: "MARS",
           description:
-          "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
-          distance:"225 MIL. KM",
-          days:"9 MONTHS",
-          img:require("@/assets/images/image/image-mars.webp")
+            "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+          distance: "225 MIL. KM",
+          days: "9 MONTHS",
+          img: require("@/assets/images/image/image-mars.webp"),
         },
         {
-          name:"EUROPA",
+          name: "EUROPA",
           description:
-          "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
-          distance:"628 MIL. KM",
-          days:"3 YEARS",
-          img:require("@/assets/images/image/image-europa.webp")
+            "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+          distance: "628 MIL. KM",
+          days: "3 YEARS",
+          img: require("@/assets/images/image/image-europa.webp"),
         },
         {
-          name:"TITAN",
+          name: "TITAN",
           description:
-          "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
-          distance:"1.6 BIL. KM",
-          days:"7 YEARS",
-          img:require("@/assets/images/image/image-titan.webp")
-        }
+            "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+          distance: "1.6 BIL. KM",
+          days: "7 YEARS",
+          img: require("@/assets/images/image/image-titan.webp"),
+        },
       ],
-      selectedPlanet:"MOON",
-      selectedOption:"MOON"
+      selectedPlanet: "MOON",
+      selectedOption: "MOON",
+      defaultImage: require("@/assets/images/image/image-moon.webp"),
     };
   },
-  methods:{
-    selectPlanet(planet){
-      this.selectedPlanet = planet;
-      this.selectedOption = planet;
-    }
+  methods: {
+    selectPlanet(planet) {
+      this.selectedPlanet = planet.name;
+      this.selectedOption = planet.name;
+      this.defaultImage = planet.img;
+    },
   },
-  computed:{
-    selectedPlanetImage(){
-      const selectedPlanetObj = this.planets.find(planet => planet.name === this.selectedPlanet);
-      return selectedPlanetObj ? selectedPlanetObj.img : "";
-    }
-  }
 };
 </script>
 <style scoped>
@@ -95,7 +97,7 @@ export default {
 }
 .hero {
   padding-top: 82px;
-  padding-bottom:48px;
+  padding-bottom: 48px;
 }
 .hero-section {
   display: flex;
@@ -180,10 +182,10 @@ ul li {
   letter-spacing: 2.7px;
   cursor: pointer;
 }
-ul li:hover{
+ul li:hover {
   border-bottom: 2px solid #fff;
-  padding-bottom:12px;
-  opacity:0.5;
+  padding-bottom: 12px;
+  opacity: 0.5;
 }
 h2 {
   color: #fff;
@@ -193,8 +195,8 @@ h2 {
   font-weight: 400;
   padding-top: 32px;
 }
-@media (min-width:600px) and (max-width:1024px){
-  h2{
+@media (min-width: 600px) and (max-width: 1024px) {
+  h2 {
     text-align: center;
     font-size: 80px;
   }
@@ -251,8 +253,8 @@ h2 {
   gap: 79px;
   padding-top: 28px;
 }
-@media (min-width:600px) and (max-width:1024px){
-  .measurements{
+@media (min-width: 600px) and (max-width: 1024px) {
+  .measurements {
     justify-content: center;
   }
 }
@@ -319,6 +321,6 @@ h3 {
 
 .selected {
   border-bottom: 2px solid #fff;
-  padding-bottom:12px;
+  padding-bottom: 12px;
 }
 </style>
