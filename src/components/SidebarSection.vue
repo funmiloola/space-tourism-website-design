@@ -1,17 +1,26 @@
 <template>
   <div class="sidebar">
     <ul>
-      <li><span>00</span>HOME</li>
-      <li><span>01</span>DESTINATION</li>
-      <li><span>02</span>CREW</li>
-      <li><span>03</span>TECHNOLOGY</li>
+      <li v-for="(nav, index) in navs" :key="index">
+        <router-link :to="nav.path" class="router-link"
+          ><span>{{ nav.figure }}</span
+          >{{ nav.name }}</router-link
+        >
+      </li>
     </ul>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      navs: [
+        { name: "HOME", path: "/", figure: "00" },
+        { name: "DESTINATION", path: "/destination", figure: "01" },
+        { name: "CREW", path: "/crew", figure: "02" },
+        { name: "TECHNOLOGY", path: "/technology", figure: "03" },
+      ],
+    };
   },
 };
 </script>
@@ -51,5 +60,9 @@ ul li span {
   font-weight: 700;
   padding-right: 11px;
   letter-spacing: 2.7px;
+}
+.router-link {
+  text-decoration: none;
+  color: #fff;
 }
 </style>

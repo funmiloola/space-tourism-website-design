@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hero-section">
     <div class="hero">
       <div class="hero-section-details">
         <h1>SO, YOU WANT TO TRAVEL TO</h1>
@@ -22,13 +22,21 @@
 </template>
 <script>
 export default {
-  data() {},
+  data() {
+    return{
+      
+    }
+  },
 };
 </script>
 <style scoped>
 * {
   margin: 0;
   padding: 0;
+}
+.hero-section{
+  padding-bottom:48px;
+   padding-top: 96px;
 }
 .hero {
   display: flex;
@@ -37,7 +45,7 @@ export default {
   align-items: flex-end;
   padding-right: 164.5px;
   padding-left: 150px;
-  padding-top: 96px;
+ 
 }
 @media (min-width: 600px) and (max-width: 1025px) {
   .hero {
