@@ -1,23 +1,26 @@
 <template>
-    <!-- <div class="crew">
+    <div class="crew">
     <nav-section/>
-    </div> -->
+    <crew-hero-section/>
+    </div>
 </template>
 <script>
-// import NavSection from "@/components/NavSection.vue"
-// export default {
-//     components:{
-//        NavSection
-//     },
-//     data() {
-//         return{
+import NavSection from "@/components/NavSection.vue";
+import CrewHeroSection from "@/components/CrewHeroSection.vue"
+export default {
+    components:{
+       NavSection,
+       CrewHeroSection
+    },
+    data() {
+        return{
 
-//         }
-//     },
-// }
+        }
+    },
+}
 </script>
 <style scoped>
-/* *{
+*{
     margin:0;
 }
 .crew{
@@ -35,7 +38,7 @@
 }
 @media (max-width:599px){
     .crew{
-        background-image: url(/assets/images/image/background-crew-mobile.jpg);
+        background-image: url(@/assets/images/image/background-crew-mobile.jpg);
     }
-} */
+}
 </style>

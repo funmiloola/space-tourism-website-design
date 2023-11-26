@@ -8,7 +8,7 @@
       <div class="options">
         <ul>
           <li
-            v-for="(planet,index) in planets"
+            v-for="(planet, index) in planets"
             :key="index"
             @click="selectPlanet(planet)"
             :class="{ selected: planet === selectedPlanet }"
@@ -16,20 +16,20 @@
             {{ planet.name }}
           </li>
         </ul>
-       
-            <h2>{{ selectedPlanet.name }}</h2>
-            <p class="option-detail">
-              {{ selectedPlanet.description }}
-            </p>
-            <div class="measurements">
-              <div>
-                <h3>AVG. DISTANCE</h3>
-                <p>{{ selectedPlanet.distance }}</p>
-              </div>
-              <div>
-                <h3>Est. travel time</h3>
-                <p>{{ selectedPlanet.days }}</p>
-              </div>
+
+        <h2>{{ selectedPlanet.name }}</h2>
+        <p class="option-detail">
+          {{ selectedPlanet.description }}
+        </p>
+        <div class="measurements">
+          <div>
+            <h3>AVG. DISTANCE</h3>
+            <p>{{ selectedPlanet.distance }}</p>
+          </div>
+          <div>
+            <h3>Est. travel time</h3>
+            <p>{{ selectedPlanet.days }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -82,7 +82,6 @@ export default {
   methods: {
     selectPlanet(planet) {
       this.selectedPlanet = planet;
-      console.log("Selected Planet:", this.selectedPlanet);
     },
   },
 };
