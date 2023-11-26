@@ -3,36 +3,33 @@
     <h1><span>01</span>Pick your destination</h1>
     <div class="hero-section">
       <div>
-        <img :src="defaultImage" alt="" />
+        <img :src="selectedPlanet.img" alt="" />
       </div>
       <div class="options">
         <ul>
           <li
-            v-for="planet in planets"
-            :key="planet.name"
+            v-for="(planet,index) in planets"
+            :key="index"
             @click="selectPlanet(planet)"
-            :class="{ selected: planet.name === selectedOption }"
+            :class="{ selected: planet === selectedPlanet }"
           >
             {{ planet.name }}
           </li>
         </ul>
-        <div v-for="planet in planets" :key="planet.name">
-          <div v-if="selectedPlanet === planet.name">
-            <h2>{{ planet.name }}</h2>
+       
+            <h2>{{ selectedPlanet.name }}</h2>
             <p class="option-detail">
-              {{ planet.description }}
+              {{ selectedPlanet.description }}
             </p>
             <div class="measurements">
               <div>
                 <h3>AVG. DISTANCE</h3>
-                <p>{{ planet.distance }}</p>
+                <p>{{ selectedPlanet.distance }}</p>
               </div>
               <div>
                 <h3>Est. travel time</h3>
-                <p>{{ planet.days }}</p>
+                <p>{{ selectedPlanet.days }}</p>
               </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -76,16 +73,16 @@ export default {
           img: require("@/assets/images/image/image-titan.webp"),
         },
       ],
-      selectedPlanet: "MOON",
-      selectedOption: "MOON",
-      defaultImage: require("@/assets/images/image/image-moon.webp"),
+      selectedPlanet: null,
     };
+  },
+  created() {
+    this.selectedPlanet = this.planets[0];
   },
   methods: {
     selectPlanet(planet) {
-      this.selectedPlanet = planet.name;
-      this.selectedOption = planet.name;
-      this.defaultImage = planet.img;
+      this.selectedPlanet = planet;
+      console.log("Selected Planet:", this.selectedPlanet);
     },
   },
 };
