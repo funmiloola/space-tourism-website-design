@@ -271,6 +271,7 @@ ul {
 }
 ul li {
   list-style-type: none;
+  cursor: pointer;
 }
 @media (max-width: 599px) {
   .images {
