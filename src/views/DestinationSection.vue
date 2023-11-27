@@ -26,7 +26,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width:600px) and (max-width: 1024px) {
   .about {
     background-image: url(@/assets/images/image/background-destination-tablet.jpg);
   }
