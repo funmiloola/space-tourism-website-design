@@ -303,7 +303,7 @@ img{
 @media (min-width:600px) and (max-width:1024px){
     img{
          width:100vw;
-         height:70vh; 
+         height:80vh; 
          object-fit:cover;
         
     }
