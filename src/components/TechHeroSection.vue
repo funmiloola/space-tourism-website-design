@@ -304,6 +304,7 @@ img{
     img{
          width:100vw;
          height:70vh; 
+         object-fit:cover;
         
     }
 }
