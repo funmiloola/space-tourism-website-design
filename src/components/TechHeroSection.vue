@@ -20,7 +20,7 @@
             <p>{{ selectedTech.desc }}</p>
           </div>
         </div>
-        <div>
+        <div class="img-container">
           <img :src="selectedTech.image" alt="" />
         </div>
       </div>
@@ -64,6 +64,7 @@ export default {
     selectTech(technology) {
       this.selectedTech = technology;
     },
+    
   },
 };
 </script>
@@ -301,8 +302,9 @@ img{
 }
 @media (min-width:600px) and (max-width:1024px){
     img{
-        width:100vw;
-        height:50vh;
+         width:100vw;
+         height:70vh; 
+        
     }
 }
 @media (max-width:599px){
