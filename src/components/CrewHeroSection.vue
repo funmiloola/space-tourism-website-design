@@ -267,11 +267,15 @@ p {
 ul {
   display: flex;
   gap: 18px;
-  /* padding-top:120px; */
 }
 ul li {
   list-style-type: none;
   cursor: pointer;
+}
+ul li:hover{
+    background: #d0d6f9;
+    opacity: 0.7;
+    border-radius: 50%;
 }
 @media (max-width: 599px) {
   .images {
