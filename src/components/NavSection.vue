@@ -170,7 +170,7 @@ ul li span {
 }
 .router-link {
   text-decoration: none;
-  color: #fff;
+  color: inherit;
 }
 .router-link-exact-active {
   border-bottom: 2px solid #fff;
