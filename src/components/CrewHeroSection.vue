@@ -132,7 +132,7 @@ span {
     padding-right: 16px;
   }
 }
-.hero-section {
+ .hero-section {
   display: flex;
   align-items: center;
   gap: 82px;
@@ -140,12 +140,14 @@ span {
 @media (min-width: 1025px) and (max-width: 1220px) {
   .hero-section {
     gap: 56px;
+   
   }
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 36px;
     padding-top: 60px;
   }
@@ -158,11 +160,12 @@ span {
     align-items: center;
     padding-top: 32px;
   }
-}
+}  
 .details {
   display: flex;
   flex-direction: column;
   gap: 120px;
+  cursor:pointer;
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   .details {
@@ -193,7 +196,7 @@ span {
     justify-content: center;
     align-items: center;
   }
-}
+}  
 h2 {
   color: #fff;
   font-family: Bellefair;
@@ -202,6 +205,11 @@ h2 {
   font-weight: 400;
   opacity: 0.5042;
   text-transform: uppercase;
+}
+@media (min-width:1025px) and (max-width:1095px){
+    h2{
+        font-size:30px;
+    }
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   h2 {
@@ -224,7 +232,12 @@ h3 {
   text-transform: uppercase;
   padding-top: 12px;
 }
-@media (min-width: 1025px) and (max-width: 1220px) {
+@media (min-width:1025px) and (max-width:1095px){
+    h3 {
+        font-size:36px;
+    }
+}
+@media (min-width: 1096px) and (max-width: 1220px) {
   h3 {
     font-size: 48px;
   }
@@ -277,15 +290,40 @@ ul li:hover{
     opacity: 0.7;
     border-radius: 50%;
 }
+.images{
+     height:550px;
+}
+@media (min-width:1025px) and (max-width:1392px){
+    .images{
+        height:auto;
+    }
+}
+@media (min-width: 600px) and (max-width: 1024px){
+    .images{
+        height:auto;
+    }
+}
 @media (max-width: 599px) {
   .images {
     border-bottom: 1px solid rgba(56, 59, 75, 1);
     padding-left: 89px;
     padding-right: 68px;
+    height:auto;
   }
 }
 .image {
   width: 405px;
+}
+@media (min-width:1700px) and (max-width:1900px){
+    .image{
+        width:490px;
+        height:auto;
+    }
+}
+@media (min-width:1025px) and (max-width:1392px){
+    .image{
+        width:375px;
+    }
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   .image {
