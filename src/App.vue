@@ -11,6 +11,10 @@
   margin: 0;
 }
 .fade-enter-active, .fade-leave-active {
-  transition:50ms linear;
+  transition:opacity 0.5s;
+}
+.fade-enter,.fade-leave-to{
+  opacity: 0;
+  background-color: transparent;
 }
 </style>
