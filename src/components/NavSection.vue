@@ -167,6 +167,8 @@ ul li span {
   z-index: 100;
   right: 1.6rem;
   top: 2.6rem;
+   opacity: 1;
+  transition: opacity 0.5s;
 }
 .router-link {
   text-decoration: none;
@@ -176,4 +178,7 @@ ul li span {
   border-bottom: 2px solid #fff;
   padding-bottom: 38px;
 }
+
+
+
 </style>
